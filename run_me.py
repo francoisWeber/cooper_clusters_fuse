@@ -10,14 +10,13 @@ from lib import files
 
 
 # ## Load data ...
+
 # load the metadata of images in Dataset : timestamp and GPS
 try:
     with open('./res.json', 'r') as f:
         res = json.load(f)
 except BaseException:
-    res = files.scan_images('Photos/fweber.mycozy.cloud/', True)
-    with open('./res.json', 'w') as f:
-        json.dump(res, f, indent=4)
+    print('Problem : you don''t have the pictures ... Call François')
 N = len(res['filenames'])
 
 
